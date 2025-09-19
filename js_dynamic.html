@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    .add {
+      background-color: blue;
+      color: white;
+      margin-left: 5px;
+    }
+    .delete {
+      background-color: green;
+      color: white;
+      margin-left: 5px;
+    }
+  </style>
+<body>
+    <h1>Dynamic Web page</h1>
+    <input type="text" id="item">
+    <button id ="addBtn" class="add">추가</button>
+    <button id="deleteBtn" class="delete">삭제</button>
+
+    <ul id="list"></ul>
+</body>
+</html>
+
+<script>
+    window.onload = function(){
+        const item = document.getElementById("item");
+        const addBtn = document.getElementById("addBtn");
+        const deleteBtn = document.getElementById("deleteBtn");
+        const list = document.getElementById("list");
+
+        addBtn.addEventListener("click", function() {
+        if (item.value.trim() !== "") {  
+          const li = document.createElement("li");
+          li.textContent = item.value;
+          list.appendChild(li);
+          item.value = ""; 
+        }
+      });
+
+      
+      deleteBtn.addEventListener("click", function() {
+        if (list.lastChild) {  
+          list.removeChild(list.lastChild);
+        }
+      });
+    }
+   
+
+</script>
