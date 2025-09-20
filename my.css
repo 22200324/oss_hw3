@@ -1,0 +1,11 @@
+
+.container { max-width: 960px; }
+
+
+.table td, .table th { font-size: .95rem; }
+
+
+.btn { margin-right: 4px; }
+
+
+.table-responsive { overflow-x: auto; }
